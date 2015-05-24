@@ -7,10 +7,10 @@ svg = d3.select('body').append('svg')
 .attr('height', height)
 
 force = d3.layout.force()
-.gravity(0.3)
-.distance(10)
-.charge(-400)
-.linkStrength(0.5)
+.gravity(0.2)
+.distance(50)
+.charge(-200)
+.linkStrength(0.7)
 .size([ width, height])
 
 d3.json 'graph.json', (error, graph) ->
@@ -18,14 +18,24 @@ d3.json 'graph.json', (error, graph) ->
   link = svg.selectAll('.link').data(graph.links).enter().append('line').attr('class', 'link')
   node = svg.selectAll('.node').data(graph.nodes).enter().append('g').attr('class', 'node')
 
-  r = 15
+
+  r = (d) ->
+    if d.Shape == "BIG_Circle"
+      30
+    else
+      10
+
+  color = (d) ->
+    if d.Shape == "BIG_Circle"
+      'white'
 
   #create circles
   node
   .append('circle')
   .attr('class', (d) -> d.Class)
   .style('stroke', 'white')
-  .style('stroke-width', 2)
+  .style('stroke-width', 1)
+  .style('fill', color)
   .attr('r', r)
   .call(force.drag)
 
