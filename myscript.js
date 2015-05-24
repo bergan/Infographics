@@ -15,7 +15,7 @@
     force.nodes(graph.nodes).links(graph.links).start();
     link = svg.selectAll('.link').data(graph.links).enter().append('line').attr('class', 'link');
     node = svg.selectAll('.node').data(graph.nodes).enter().append('g').attr('class', 'node');
-    r = 10;
+    r = 15;
     node.append('circle').attr('class', function(d) {
       return d.Class;
     }).style('stroke', 'white').style('stroke-width', 2).attr('r', r).call(force.drag);

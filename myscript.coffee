@@ -17,7 +17,7 @@ d3.json 'graph.json', (error, graph) ->
   link = svg.selectAll('.link').data(graph.links).enter().append('line').attr('class', 'link')
   node = svg.selectAll('.node').data(graph.nodes).enter().append('g').attr('class', 'node')
 
-  r = 10
+  r = 15
 
   #create circles
   node
