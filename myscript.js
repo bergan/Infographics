@@ -8,7 +8,7 @@
 
   svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
 
-  force = d3.layout.force().distance(27).charge(-200).linkStrength(0.2).size([width, height]);
+  force = d3.layout.force().gravity(0.3).distance(10).charge(-400).linkStrength(0.5).size([width, height]);
 
   d3.json('graph.json', function(error, graph) {
     var link, node, r;

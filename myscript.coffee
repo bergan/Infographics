@@ -7,9 +7,10 @@ svg = d3.select('body').append('svg')
 .attr('height', height)
 
 force = d3.layout.force()
-.distance(27)
-.charge(-200)
-.linkStrength(0.2)
+.gravity(0.3)
+.distance(10)
+.charge(-400)
+.linkStrength(0.5)
 .size([ width, height])
 
 d3.json 'graph.json', (error, graph) ->
