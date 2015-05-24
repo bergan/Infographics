@@ -8,17 +8,28 @@
 
   svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
 
-  force = d3.layout.force().gravity(0.3).distance(10).charge(-400).linkStrength(0.5).size([width, height]);
+  force = d3.layout.force().gravity(0.2).distance(50).charge(-200).linkStrength(0.9).size([width, height]);
 
   d3.json('graph.json', function(error, graph) {
-    var link, node, r;
+    var fillColor, link, node, r;
     force.nodes(graph.nodes).links(graph.links).start();
     link = svg.selectAll('.link').data(graph.links).enter().append('line').attr('class', 'link');
     node = svg.selectAll('.node').data(graph.nodes).enter().append('g').attr('class', 'node');
-    r = 15;
+    r = function(d) {
+      if (d.Shape === "BIG_Circle") {
+        return 30;
+      } else {
+        return 10;
+      }
+    };
+    fillColor = function(d) {
+      if (d.Shape === "BIG_Circle") {
+        return 'white';
+      }
+    };
     node.append('circle').attr('class', function(d) {
       return d.Class;
-    }).style('stroke', 'white').style('stroke-width', 2).attr('r', r).call(force.drag);
+    }).style('stroke', 'white').style('stroke-width', 1).style('fill', fillColor).attr('r', r).call(force.drag);
     node.append('text').attr('text-anchor', 'middle').attr('alignment-baseline', 'middle').attr('word-break', 'break-all').style('fill', 'black').text(function(d) {
       return d.Name;
     });

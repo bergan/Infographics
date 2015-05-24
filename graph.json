@@ -1981,7 +1981,7 @@
       "LinkTarget":179
     },
     {
-      "Class":"RT",
+      "Class":"ROS",
       "Persent":"",
       "Name":"rt.com",
       "Month_Auditory":null,
@@ -2089,17 +2089,6 @@
       "Source":"",
       "LinkSource":190,
       "LinkTarget":182
-    },
-    {
-      "Class":"ROS",
-      "Persent":"",
-      "Name":"Росимущество",
-      "Month_Auditory":null,
-      "Day_Auditory":"",
-      "Shape":"Circle",
-      "Source":"",
-      "LinkSource":191,
-      "LinkTarget":191
     },
     {
       "Class":"ROS",
@@ -2876,10 +2865,6 @@
     },
     {
       "source":190,
-      "target":190
-    },
-    {
-      "source":191,
       "target":190
     }
   ]

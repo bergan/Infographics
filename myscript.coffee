@@ -10,7 +10,7 @@ force = d3.layout.force()
 .gravity(0.2)
 .distance(50)
 .charge(-200)
-.linkStrength(0.7)
+.linkStrength(0.9)
 .size([ width, height])
 
 d3.json 'graph.json', (error, graph) ->
@@ -25,9 +25,11 @@ d3.json 'graph.json', (error, graph) ->
     else
       10
 
-  color = (d) ->
+  fillColor = (d) ->
     if d.Shape == "BIG_Circle"
       'white'
+
+
 
   #create circles
   node
@@ -35,7 +37,7 @@ d3.json 'graph.json', (error, graph) ->
   .attr('class', (d) -> d.Class)
   .style('stroke', 'white')
   .style('stroke-width', 1)
-  .style('fill', color)
+  .style('fill', fillColor)
   .attr('r', r)
   .call(force.drag)
 
