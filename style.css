@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    background: #2595cf;
+}
+
+.link {
+    stroke-width: 2px;
+    stroke: white;
+}
+
+.node text {
+    pointer-events: none;
+    font: 12px sans-serif;
+}
+
+.MailRu {
+    fill: #0f548e;
+}
+
+.Oneksim {
+    fill: #e0842e;
+}
+
+.Rbc {
+    fill: #91b82e;
+}
+
+.Yandex {
+    fill: #d0004c;
+}
+.Rambler {
+    fill: #e1842e;
+}
+
+.Gazprom {
+    fill: #0f548e;
+}
+
+.NatzMedia {
+    fill: #91b725;
+}
+
+.IDNews {
+    fill: #d0004c;
+}
+
+.CTC {
+    fill: #e1842e;
+}
+
+.Hearst {
+    fill: #0f548e;
+}
+
+.Sanoma {
+    fill: #0f548e;
+}
+
+.Springer {
+    fill: #91b821;
+}
+
+.Rain {
+    fill: #d0004c;
+}
+
+.Promsv {
+    fill: #0f548e;
+}
+
+.Newsru {
+    fill: #91b82e;
+}
+
+.Commersant {
+    fill: #0f548e;
+}
+
+.Pravda {
+    fill: #d1094d;
+}
+
+.VGTRK {
+    fill: #d1094d;
+}
+
+.RT {
+    fill: #0f548e;
+}
+
+.ROS {
+    fill: #95ba11;
+}
+
